@@ -2,6 +2,7 @@ package com.example.day3_SMS.controller;
 
 import com.example.day3_SMS.model.StudentModel;
 import com.example.day3_SMS.service.StudentService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,7 +17,7 @@ public class StudentController {
 
     // create function api
     @PostMapping("/add-student")
-    public StudentModel addStudent(@RequestBody StudentModel student){
+    public StudentModel addStudent(@Valid @RequestBody StudentModel student){
         return service.addStudent(student);
     }
 
